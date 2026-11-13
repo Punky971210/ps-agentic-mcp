@@ -1,0 +1,29 @@
+{
+  "name": "ps-agent",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "description": "Local, offline-testable Photoshop automation for agents: MCP (search/describe/run/plan) + psx CLI + ExtendScript engine + mock host",
+  "author": "punky",
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "lint:es3": "node scripts/lint-es3.mjs",
+    "audit": "node scripts/audit-tools.mjs",
+    "check": "npm run lint:es3 && npm test && npm run audit",
+    "mcp": "node src/mcp/server.mjs",
+    "cli": "node src/cli/psx.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src/",
+    "skill/",
+    "bin/",
+    "README.md"
+  ],
+  "bin": {
+    "psx": "src/cli/psx.mjs"
+  }
+}
